@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "planet-creator.server", "planet-creator.server\planet-creator.server.csproj", "{AD62A531-C32F-4A48-8216-38012E96E9B9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD62A531-C32F-4A48-8216-38012E96E9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD62A531-C32F-4A48-8216-38012E96E9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD62A531-C32F-4A48-8216-38012E96E9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD62A531-C32F-4A48-8216-38012E96E9B9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
