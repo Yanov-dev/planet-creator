@@ -1,4 +1,6 @@
 ﻿using System.Drawing;
+using Newtonsoft.Json;
+using planet_craator.engine.Converters;
 
 namespace planet_craator.engine
 {
@@ -8,6 +10,7 @@ namespace planet_craator.engine
 
         public int FullHeight { get; set; }
 
+        [JsonConverter(typeof(JsonRectangleConverter))]
         public Rectangle Rect { get; set; }
 
         public GenerationArea()

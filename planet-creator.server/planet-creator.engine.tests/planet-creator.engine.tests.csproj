@@ -12,5 +12,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\planet-craator.engine\planet-craator.engine.csproj" />
+    <ProjectReference Include="..\planet-creator.engine.extensions\planet-creator.engine.extensions.csproj" />
   </ItemGroup>
 </Project>

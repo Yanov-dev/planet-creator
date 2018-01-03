@@ -10,18 +10,22 @@ namespace planet_craator.engine
     {
         private class ColorChank
         {
-            public int MinAlt { get; set; }
+            public int MinLevel { get; set; }
 
-            public int MaxAlt { get; set; }
+            public int MaxLevel { get; set; }
 
             public Color MinColor { get; set; }
 
             public Color MaxColor { get; set; }
 
-            public int Range => MaxAlt - MinAlt;
+            public int Range => MaxLevel - MinLevel;
         }
 
         private readonly List<ColorChank> _chanks;
+
+        public int MinLevel => _chanks.Min(e => e.MinLevel);
+
+        public int MaxLevel => _chanks.Max(e => e.MaxLevel);
 
         public ColorContainer(ShemaLayer layer)
         {
@@ -32,8 +36,8 @@ namespace planet_craator.engine
             {
                 var chank = new ColorChank
                 {
-                    MinAlt = sorted[i].Level,
-                    MaxAlt = sorted[i + 1].Level,
+                    MinLevel = sorted[i].Level,
+                    MaxLevel = sorted[i + 1].Level,
                     MinColor = sorted[i].Color,
                     MaxColor = sorted[i + 1].Color
                 };
@@ -42,13 +46,13 @@ namespace planet_craator.engine
             }
         }
 
-        public Color GetColor(double alt)
+        public Color GetColor(double level)
         {
-            var chank = _chanks.FirstOrDefault(e => e.MinAlt <= alt && e.MaxAlt >= alt);
+            var chank = _chanks.FirstOrDefault(e => e.MinLevel <= level && e.MaxLevel >= level);
             if (chank == null)
                 return Color.Black;
 
-            var percent = (alt - chank.MinAlt) / chank.Range;
+            var percent = (level - chank.MinLevel) / chank.Range;
 
             return chank.MinColor.Lerp(chank.MaxColor, percent);
         }

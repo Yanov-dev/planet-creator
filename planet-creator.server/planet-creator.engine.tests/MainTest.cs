@@ -4,6 +4,7 @@ using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
 using planet_craator.engine;
+using planet_creator.engine.extensions;
 using SixLabors.ImageSharp;
 using Rectangle = System.Drawing.Rectangle;
 
@@ -55,23 +56,17 @@ namespace planet_creator.engine.tests
             });
             shema.Layers.Add(shemaLayer);
 
+            var cc = new ColorContainer(shemaLayer);
+
+            cc.GeneratePreview(new Size(100, 500), File.OpenWrite("priview.png"));
+
             var engine = new GenerationEngine();
 
             var area = new GenerationArea(500, 500);
 
-            var result = engine.Generate(shema, area).Colors;
+            var planet = engine.Generate(shema, area);
 
-            using (var image = new Image<Rgba32>(area.Rect.Width, area.Rect.Height))
-            {
-                for (var x = 0; x < area.Rect.Width; x++)
-                for (var y = 0; y < area.Rect.Height; y++)
-                {
-                    var c = result[x, y];
-                    image[x, y] = new Rgba32(c.R, c.G, c.B, c.A);
-                }
-
-                image.Save("bar.jpg");
-            }
+            planet.ToPng(File.OpenWrite("planet.png"));
 
             File.WriteAllText("planet.json", JsonConvert.SerializeObject(shema, Formatting.Indented));
             shema = JsonConvert.DeserializeObject<Shema>(File.ReadAllText("planet.json"));

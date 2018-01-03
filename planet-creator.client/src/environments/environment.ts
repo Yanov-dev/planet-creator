@@ -4,5 +4,9 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  links: {
+    generate2d: "http://localhost:5000/api/planet/generate",
+    layerPreview: "http://localhost:5000/api/planet/layer_preview"
+  }
 };

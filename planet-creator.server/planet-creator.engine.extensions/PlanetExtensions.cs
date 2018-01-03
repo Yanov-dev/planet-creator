@@ -6,13 +6,11 @@ namespace planet_creator.engine.extensions
 {
     public static class PlanetExtensions
     {
-        public static void ToPng(this Planet2D planet2D)
+        public static void ToPng(this Planet2D planet2D, Stream stream)
         {
             var width = planet2D.Width;
             var height = planet2D.Height;
             var colors = planet2D.Colors;
-            
-            var ms = new MemoryStream();
             
             using (var image = new Image<Rgba32>(width, height))
             {
@@ -23,8 +21,7 @@ namespace planet_creator.engine.extensions
                     image[x, y] = new Rgba32(c.R, c.G, c.B, c.A);
                 }
 
-                image.SaveAsPng(ms);
-                image.Save("bar.jpg");
+                image.SaveAsPng(stream);
             }
         }
     }
