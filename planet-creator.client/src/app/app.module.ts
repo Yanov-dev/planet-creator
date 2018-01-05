@@ -12,12 +12,14 @@ import { Generator2dService } from './services/generator2dService';
 import { HttpClientModule } from '@angular/common/http';
 import { HomePageComponent } from './pages/home-page/home.page';
 import { LayerEditorComponent } from './components/layer.editor.component/layer.editor.component';
+import { LayersListComponent } from './components/layers.list.component/layers.list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestPageComponent,
     HomePageComponent,
+    LayersListComponent,
     LayerEditorComponent,
     Cretor2DPageComponent
   ],

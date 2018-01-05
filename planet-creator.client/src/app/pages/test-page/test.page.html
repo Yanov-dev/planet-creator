@@ -1,11 +1,10 @@
 <mat-grid-list cols="3">
-    <mat-grid-tile>
-        <layer-editor></layer-editor>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        <button mat-button (click)="generate()">Generate</button>
-
-        <img [src]="planet" *ngIf="planet" width="500" height="500" id="photo-id" />
-    </mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>
+    <app-layer-editor></app-layer-editor>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <button mat-button (click)="generate()">Generate</button>
+    <img [src]="planet" *ngIf="planet" width="500" height="500" id="photo-id"/>
+  </mat-grid-tile>
+  <mat-grid-tile>3</mat-grid-tile>
 </mat-grid-list>

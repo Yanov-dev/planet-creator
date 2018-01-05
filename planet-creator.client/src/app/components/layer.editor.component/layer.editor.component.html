@@ -1,27 +1,27 @@
 <div style="display:flex">
-    <div class="mat-elevation-z8" style="margin:8px">
-        <mat-table #table [dataSource]="dataSource">
-            <ng-container matColumnDef="level">
-                <mat-header-cell *matHeaderCellDef> Level </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.level}} </mat-cell>
-            </ng-container>
+  <div class="mat-elevation-z8" style="margin:8px">
+    <mat-table #table [dataSource]="dataSource">
+      <ng-container matColumnDef="level">
+        <mat-header-cell *matHeaderCellDef> Level</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.level}}</mat-cell>
+      </ng-container>
 
-            <ng-container matColumnDef="color">
-                <mat-header-cell *matHeaderCellDef> Color </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.color}} </mat-cell>
-            </ng-container>
+      <ng-container matColumnDef="color">
+        <mat-header-cell *matHeaderCellDef> Color</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.color}}</mat-cell>
+      </ng-container>
 
-            <ng-container matColumnDef="remove">
-                <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                <mat-cell *matCellDef="let element">
-                    <button mat-button (click)="removeColor(element.level)">Remove</button>
-                </mat-cell>
-            </ng-container>
+      <ng-container matColumnDef="remove">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button mat-button (click)="removeColor(element.level)">Remove</button>
+        </mat-cell>
+      </ng-container>
 
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
-    </div>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
 
-    <img [src]="preview_data" *ngIf="preview_data" width="100" height="500" />
+  <img [src]="preview_data" *ngIf="preview_data" width="100" height="500"/>
 </div>
