@@ -1,7 +1,7 @@
-import { ColorLevel } from "./ColorLevel";
+import {ColorLevel} from './ColorLevel';
 
 export class ShemaLayer {
-    colors: ColorLevel[];
-    seed: number;
-    isEnable: boolean;
+  colors: ColorLevel[];
+  seed: number;
+  isEnable: boolean;
 }

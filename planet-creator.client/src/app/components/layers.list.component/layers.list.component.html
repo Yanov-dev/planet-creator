@@ -1,1 +1,9 @@
-<div></div>
+<div style="display: flex">
+  <mat-list>
+    <mat-list-item *ngFor="let el of layers">
+      <button mat-button (click)="switch(el)">Generate</button>
+    </mat-list-item>
+  </mat-list>
+
+  <app-layer-editor [layer]="selectedLayer"></app-layer-editor>
+</div>

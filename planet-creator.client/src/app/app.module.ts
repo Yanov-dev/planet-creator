@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { MatToolbarModule, MatButtonModule, MatDialogModule, MatAutocompleteModule, MatInputModule, MatSelectModule, MatSortModule, MatGridListModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatDialogModule, MatAutocompleteModule, MatInputModule, MatSelectModule, MatSortModule, MatGridListModule, MatListModule } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
@@ -24,6 +24,7 @@ import { LayersListComponent } from './components/layers.list.component/layers.l
     Cretor2DPageComponent
   ],
   imports: [
+    MatListModule,
     MatGridListModule,
     MatTableModule,
     HttpClientModule,

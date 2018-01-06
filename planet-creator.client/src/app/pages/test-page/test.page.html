@@ -1,6 +1,6 @@
 <mat-grid-list cols="3">
   <mat-grid-tile>
-    <app-layer-editor></app-layer-editor>
+    <app-layers-list [layers]="shema.layers"></app-layers-list>
   </mat-grid-tile>
   <mat-grid-tile>
     <button mat-button (click)="generate()">Generate</button>
