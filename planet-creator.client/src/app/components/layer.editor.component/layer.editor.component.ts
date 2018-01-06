@@ -42,10 +42,16 @@ export class LayerEditorComponent implements OnInit {
     this.updatePreview();
   }
 
+  colorChange() {
+    this.updatePreview();
+    this.change.emit(this._layer);
+  }
+
   removeColor(level: number) {
     this.layer.colors = this.layer.colors.filter(e => e.level !== level);
     this.dataSource.data = this.layer.colors;
     this.updatePreview();
+    this.change.emit(this._layer);
   }
 
   updatePreview() {

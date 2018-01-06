@@ -18,33 +18,38 @@ export class TestPageComponent {
       'colors': [
         {
           'level': 0,
-          'color': '#FF000000'
+          'color': '#000000'
         },
         {
           'level': 640,
-          'color': '#FF483D8B'
+          'color': '#483D8B'
         },
         {
           'level': 675,
-          'color': '#FF8470FF'
+          'color': '#8470FF'
         },
         {
           'level': 770,
-          'color': '#FFEEDD82'
+          'color': '#EEDD82'
         },
         {
           'level': 945,
-          'color': '#FF6B8E23'
+          'color': '#6B8E23'
         },
         {
           'level': 1275,
-          'color': '#FF000000'
+          'color': '#000000'
         }
       ],
       'isEnable': true,
       'seed': 0.0
     });
     console.log(this.shema);
+  }
+
+  layersChanged() {
+    console.log('changed');
+    this.generateWithSize(50);
   }
 
   generate() {

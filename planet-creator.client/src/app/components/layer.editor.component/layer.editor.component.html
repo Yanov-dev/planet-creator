@@ -8,7 +8,12 @@
 
       <ng-container matColumnDef="color">
         <mat-header-cell *matHeaderCellDef> Color</mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.color}}</mat-cell>
+        <mat-cell *matCellDef="let element">
+          <input [(colorPicker)]="element.color"
+                 [style.background]="element.color"
+                 (colorPickerChange)="colorChange()"
+                 [value]="element.color"/>
+        </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="remove">
@@ -23,5 +28,5 @@
     </mat-table>
   </div>
 
-  <img [src]="preview_data" *ngIf="preview_data" width="100" height="500"/>
+  <img [src]="preview_data" *ngIf="preview_data" width="400" height="500"/>
 </div>

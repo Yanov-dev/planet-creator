@@ -12,7 +12,7 @@ namespace planet_craator.engine.Converters
         {
             var color = (Color) value;
 
-            writer.WriteRawValue($"\"#{color.A:X2}{color.R:X2}{color.G:X2}{color.B:X2}\"");
+            writer.WriteRawValue($"\"#{color.R:X2}{color.G:X2}{color.B:X2}\"");
         }
 
         public override object ReadJson(
@@ -28,8 +28,7 @@ namespace planet_craator.engine.Converters
             return Color.FromArgb(
                 int.Parse(colorStr.Substring(1, 2), NumberStyles.HexNumber),
                 int.Parse(colorStr.Substring(3, 2), NumberStyles.HexNumber),
-                int.Parse(colorStr.Substring(5, 2), NumberStyles.HexNumber),
-                int.Parse(colorStr.Substring(7, 2), NumberStyles.HexNumber));
+                int.Parse(colorStr.Substring(5, 2), NumberStyles.HexNumber));
         }
 
         public override bool CanConvert(Type objectType)

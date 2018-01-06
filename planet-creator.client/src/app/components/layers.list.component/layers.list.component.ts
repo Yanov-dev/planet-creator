@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {ShemaLayer} from '../../models/shemaLayer';
 import {ColorLevel} from '../../models/ColorLevel';
 
@@ -11,9 +11,15 @@ export class LayersListComponent {
   @Input()
   layers: ShemaLayer[];
 
+  @Output() change: EventEmitter<any> = new EventEmitter();
+
   selectedLayer: ShemaLayer;
 
   constructor() {
+  }
+
+  callChanged() {
+    this.change.emit();
   }
 
   switch(layer: ShemaLayer) {

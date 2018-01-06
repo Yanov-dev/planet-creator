@@ -5,5 +5,5 @@
     </mat-list-item>
   </mat-list>
 
-  <app-layer-editor [layer]="selectedLayer"></app-layer-editor>
+  <app-layer-editor (change)="callChanged()" [layer]="selectedLayer"></app-layer-editor>
 </div>
