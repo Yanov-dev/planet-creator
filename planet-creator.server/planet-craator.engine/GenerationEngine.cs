@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using planet_craator.engine.Extionsions;
 using planet_craator.engine.GenerationAlgorithm;
 using planet_craator.engine.Render;
@@ -29,6 +30,8 @@ namespace planet_craator.engine
             var range = algorithm.GetRange();
             var colorContainer = new ColorContainer(layer);
 
+            var colorRange = colorContainer.Range;
+
             var bmp = new Color[area.Rect.Width, area.Rect.Height];
 
             for (var x = area.Rect.X; x < area.Rect.X + area.Rect.Width; x++)
@@ -39,8 +42,7 @@ namespace planet_craator.engine
 
                     var alt = algorithm.GetAlt(p3, 50);
 
-                    alt = (alt - range.min) / (range.max - range.min);
-                    alt *= layer.MaxLevel;
+                    alt = range.Scale(alt, colorRange);
 
                     var color = colorContainer.GetColor(alt);
 

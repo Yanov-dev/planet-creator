@@ -11,17 +11,17 @@ export class Generator2dService {
   constructor(private _http: HttpClient) {
   }
 
-  Generate(shema: Shema): Observable<any> {
+  Generate(shema: Shema, size: number): Observable<any> {
     const obj = new Generate2DRequest();
     obj.shema = shema;
     obj.area = {
-      'fullWidth': 200,
-      'fullHeight': 200,
+      'fullWidth': size,
+      'fullHeight': size,
       'rect': {
         'x': 0,
         'y': 0,
-        'width': 200,
-        'height': 200
+        'width': size,
+        'height': size
       }
     };
     return this._http.post(environment.links.generate2d, obj);

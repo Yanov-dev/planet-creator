@@ -23,9 +23,9 @@ namespace planet_craator.engine.GenerationAlgorithm
             __RSeed4 = rand2(__RSeed2, __RSeed3);
         }
         
-        public override (double min, double max) GetRange()
+        public override Range GetRange()
         {
-            return (-0.1, 0.1);
+            return new Range(-0.1,0.1);
         }
         
         private double rand2(double p, double q)

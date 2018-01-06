@@ -48,7 +48,15 @@ export class TestPageComponent {
   }
 
   generate() {
-    this._generator2dService.Generate(this.shema).subscribe(e => {
+    // this.generateWithSize(100);
+    // this.generateWithSize(150);
+    this.generateWithSize(200);
+    // this.generateWithSize(250);
+    // this.generateWithSize(500);
+  }
+
+  generateWithSize(size: number) {
+    this._generator2dService.Generate(this.shema, size).subscribe(e => {
       this.planet = 'data:image/jpeg;base64,' + e;
     });
   }

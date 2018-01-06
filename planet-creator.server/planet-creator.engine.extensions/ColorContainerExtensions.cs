@@ -13,8 +13,8 @@ namespace planet_creator.engine.extensions
 
             var colors = new Color[range];
 
-            for (var i = container.MinLevel; i < container.MaxLevel; i++)
-                colors[i] = container.GetColor(i);
+            for (int level = container.MinLevel, i = 0; level < container.MaxLevel; level++, i++)
+                colors[i] = container.GetColor(level);
 
             using (var image = new Image<Rgba32>(size.Width, range))
             {

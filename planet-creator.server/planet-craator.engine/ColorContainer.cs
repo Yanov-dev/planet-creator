@@ -27,6 +27,8 @@ namespace planet_craator.engine
 
         public int MaxLevel => _chanks.Max(e => e.MaxLevel);
 
+        public Range Range => new Range(MinLevel, MaxLevel);
+
         public ColorContainer(ShemaLayer layer)
         {
             _chanks = new List<ColorChank>();

@@ -13,6 +13,6 @@ namespace planet_craator.engine.GenerationAlgorithm
 
         public abstract double GetAlt(Point3D location, int depth);
         
-        public abstract (double min, double max) GetRange();
+        public abstract Range GetRange();
     }
 }
