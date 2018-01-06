@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Properties</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+    <mat-form-field>
+      <mat-select placeholder="Projection"
+                  (selectionChange)="changeProjection($event)">
+        <mat-option [value]="0">Mercator</mat-option>
+        <mat-option [value]="1">Orthographic</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-slider
+      [max]="360"
+      [min]="0"
+      (change)="changeLat($event)"
+      [thumb-label]="true">
+    </mat-slider>
+
+    <mat-slider
+      [max]="360"
+      [min]="0"
+      (change)="changeLng($event)"
+      [thumb-label]="true">
+    </mat-slider>
+  </mat-card-content>
+</mat-card>

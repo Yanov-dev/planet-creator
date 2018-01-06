@@ -11,7 +11,8 @@ import {
   MatSortModule,
   MatGridListModule,
   MatListModule,
-  MatCardModule
+  MatCardModule,
+  MatSliderModule
 } from '@angular/material';
 import {ColorPickerModule} from 'ngx-color-picker';
 import {MatTableModule} from '@angular/material/table';
@@ -25,10 +26,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {HomePageComponent} from './pages/home-page/home.page';
 import {LayerEditorComponent} from './components/layer.editor.component/layer.editor.component';
 import {LayersListComponent} from './components/layers.list.component/layers.list.component';
+import {Planet2dRenderComponent} from './components/planet2d.render.component/planet2d.render.component';
+import {Planet2dPropertiesComponent} from './components/planet2d.properties.component/planet2d.properties.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    Planet2dPropertiesComponent,
+    Planet2dRenderComponent,
     TestPageComponent,
     HomePageComponent,
     LayersListComponent,
@@ -37,6 +42,7 @@ import {LayersListComponent} from './components/layers.list.component/layers.lis
   ],
   imports: [
     ColorPickerModule,
+    MatSliderModule,
     MatCardModule,
     MatListModule,
     MatGridListModule,

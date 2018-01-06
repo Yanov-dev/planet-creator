@@ -1,10 +1,11 @@
 <mat-grid-list cols="3">
   <mat-grid-tile>
-    <app-layers-list (change)="layersChanged()" [layers]="shema.layers"></app-layers-list>
+    <app-layers-list (change)="generate()" [layers]="shema.layers"></app-layers-list>
   </mat-grid-tile>
   <mat-grid-tile>
-    <button mat-button (click)="generate()">Generate</button>
-    <img [src]="planet" *ngIf="planet" width="500" height="500" id="photo-id"/>
+    <app-planet2d-render [shema]="shema" #planet2d></app-planet2d-render>
   </mat-grid-tile>
-  <mat-grid-tile>3</mat-grid-tile>
+  <mat-grid-tile>
+    <app-planet2d-properties (change)="generate()" [shema]="shema"></app-planet2d-properties>
+  </mat-grid-tile>
 </mat-grid-list>

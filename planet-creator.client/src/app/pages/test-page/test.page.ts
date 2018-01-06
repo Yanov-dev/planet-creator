@@ -1,6 +1,7 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {Generator2dService} from '../../services/generator2dService';
 import {Shema} from '../../models/Shema';
+import {Planet2dRenderComponent} from '../../components/planet2d.render.component/planet2d.render.component';
 
 @Component({
   templateUrl: './test.page.html',
@@ -9,6 +10,8 @@ export class TestPageComponent {
   title = 'app';
 
   planet: string;
+
+  @ViewChild('planet2d') planet2dRender: Planet2dRenderComponent;
 
   shema: Shema;
 
@@ -44,25 +47,9 @@ export class TestPageComponent {
       'isEnable': true,
       'seed': 0.0
     });
-    console.log(this.shema);
-  }
-
-  layersChanged() {
-    console.log('changed');
-    this.generateWithSize(50);
   }
 
   generate() {
-    // this.generateWithSize(100);
-    // this.generateWithSize(150);
-    this.generateWithSize(200);
-    // this.generateWithSize(250);
-    // this.generateWithSize(500);
-  }
-
-  generateWithSize(size: number) {
-    this._generator2dService.Generate(this.shema, size).subscribe(e => {
-      this.planet = 'data:image/jpeg;base64,' + e;
-    });
+    this.planet2dRender.render();
   }
 }
