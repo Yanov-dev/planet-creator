@@ -13,8 +13,26 @@ namespace planet_creator.engine.benchmark
             SingleThreadTest();
 
             FourThreadsTest();
-            
-            Console.ReadKey();
+
+            ColorContainerTest();
+        }
+
+        private static void ColorContainerTest()
+        {
+            var cc = new ColorContainer(GetShema().Layers[0]);
+            var count = 1000 * 1000;
+            var colors = new Color[count];
+
+            var sw = new Stopwatch();
+            sw.Start();
+
+            for (int i = 0; i < count; i++)
+            {
+                colors[i] = cc.GetColor(0);
+            }
+
+            sw.Stop();
+            Console.WriteLine($"ColorContainer - {sw.ElapsedMilliseconds}ms");
         }
 
         private static void FourThreadsTest()
