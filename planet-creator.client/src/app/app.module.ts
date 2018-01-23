@@ -28,6 +28,8 @@ import {LayerEditorComponent} from './components/layer.editor.component/layer.ed
 import {LayersListComponent} from './components/layers.list.component/layers.list.component';
 import {Planet2dRenderComponent} from './components/planet2d.render.component/planet2d.render.component';
 import {Planet2dPropertiesComponent} from './components/planet2d.properties.component/planet2d.properties.component';
+import {OverviewPageComponent} from './pages/overview.page/overview.page';
+import {CreateProjectDialogComponent} from './dialogs/create.project.dialog/craete.project.dialog.component';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,15 @@ import {Planet2dPropertiesComponent} from './components/planet2d.properties.comp
     Planet2dPropertiesComponent,
     Planet2dRenderComponent,
     TestPageComponent,
+    OverviewPageComponent,
     HomePageComponent,
     LayersListComponent,
     LayerEditorComponent,
-    Cretor2DPageComponent
+    Cretor2DPageComponent,
+    CreateProjectDialogComponent
+  ],
+  entryComponents: [
+    CreateProjectDialogComponent
   ],
   imports: [
     ColorPickerModule,

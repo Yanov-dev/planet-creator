@@ -1,0 +1,17 @@
+<div>
+  <!--
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Favorite food" value="Sushi">
+    </mat-form-field>
+
+    <button mat-button (click)="createNewProject()">New project</button>
+  -->
+
+  <mat-grid-list [rowHeight]="350" [cols]="4" [gutterSize]="20">
+    <mat-grid-tile *ngFor="let i of list">
+      <div style="background-color: red;width: 300px;height: 300px; margin: 4px"></div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+</div>

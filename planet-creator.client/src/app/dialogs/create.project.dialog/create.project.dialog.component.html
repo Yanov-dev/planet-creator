@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Add trigger</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-select placeholder="When" [(value)]="operator">
+      <mat-option value="MoreThan">
+        More than
+      </mat-option>
+      <mat-option value="LessThan">
+        Less than
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button tabindex="2">Add</button>
+  <button mat-button tabindex="-1">Cancel</button>
+</div>

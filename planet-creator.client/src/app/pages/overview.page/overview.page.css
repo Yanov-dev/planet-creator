@@ -1,0 +1,22 @@
+.box {
+  float: left;
+  position: relative;
+  width: 25%;
+}
+
+.boxInner {
+  background-color: white;
+  bottom: 15px;
+  left: 15px;
+  overflow: hidden;
+  padding: 10px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.boxInner div {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
