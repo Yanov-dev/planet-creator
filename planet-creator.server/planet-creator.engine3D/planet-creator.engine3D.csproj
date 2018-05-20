@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SixLabors.ImageSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\..\Users\ynovikov\.nuget\packages\sixlabors.imagesharp\1.0.0-beta0002\lib\netstandard2.0\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\planet-craator.engine\planet-craator.engine.csproj">
+      <Project>{C966C6FD-AC85-493A-BF8B-1E5F946EFC0D}</Project>
+      <Name>planet-craator.engine</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

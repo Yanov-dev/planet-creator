@@ -4,5 +4,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\planet-craator.engine\planet-craator.engine.csproj" />
+    <ProjectReference Include="..\planet-creator.engine3D\planet-creator.engine3D.csproj" />
   </ItemGroup>
 </Project>

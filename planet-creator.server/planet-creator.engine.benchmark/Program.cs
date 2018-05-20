@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using planet_craator.engine;
+using planet_creator.engine.extensions;
+using planet_creator.engine3D;
 
 namespace planet_creator.engine.benchmark
 {
@@ -10,11 +15,39 @@ namespace planet_creator.engine.benchmark
     {
         static void Main(string[] args)
         {
-            SingleThreadTest();
+            var gen = new Planet3dGenerator(5, 10);
 
-            FourThreadsTest();
+//            var finder = new Finder();
+//
+//            var res = finder.Find(model.RootTriengles);
+//
+//            foreach (var v in res)
+//            {
+//                Console.WriteLine($"{v.left.Id} - {v.right.Id}");
+//            }
 
-            ColorContainerTest();
+            //model.ExportToObj(File.OpenWrite("planet.obj"));
+
+            var sw = Stopwatch.StartNew();
+            
+            gen.Generate();
+            
+            Console.WriteLine(sw.Elapsed);
+
+            var colorContainer = new ColorContainer(GetShema().Layers[0]);
+            var imageStream = File.Open(@"C:\AllFiles\testAppEmpty\src\assets\image.png", FileMode.Create);
+            var objStream = File.Open(@"C:\AllFiles\testAppEmpty\src\assets\planet.obj", FileMode.Create);
+            
+            sw.Restart();
+            gen.Export(colorContainer, imageStream, objStream);
+            //gen.Export(colorContainer, null, objStream);
+            Console.WriteLine(sw.Elapsed);
+
+            //SingleThreadTest();
+
+            //FourThreadsTest();
+
+            //ColorContainerTest();
         }
 
         private static void ColorContainerTest()

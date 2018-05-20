@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "planet-creator.engine.exten
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "planet-creator.server.dto", "planet-creator.server.dto\planet-creator.server.dto.csproj", "{DD825627-3183-42F1-93BD-B681D83BDCD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "planet-creator.engine3D", "planet-creator.engine3D\planet-creator.engine3D.csproj", "{7AB8DFFE-73B3-4989-A9CD-FBF570F196DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{DD825627-3183-42F1-93BD-B681D83BDCD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD825627-3183-42F1-93BD-B681D83BDCD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD825627-3183-42F1-93BD-B681D83BDCD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AB8DFFE-73B3-4989-A9CD-FBF570F196DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AB8DFFE-73B3-4989-A9CD-FBF570F196DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AB8DFFE-73B3-4989-A9CD-FBF570F196DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AB8DFFE-73B3-4989-A9CD-FBF570F196DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
