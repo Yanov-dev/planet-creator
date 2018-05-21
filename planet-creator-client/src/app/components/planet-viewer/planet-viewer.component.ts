@@ -3,6 +3,7 @@ import {AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild} from '@a
 import * as THREE from 'three';
 import * as OBJLoader from 'three-obj-loader';
 import * as MTLLoader from 'three-mtl-loader';
+import {PlanetGenerationService} from '../../services/planet-generation.service';
 
 @Component({
   selector: 'app-planet-viewer',
@@ -10,6 +11,12 @@ import * as MTLLoader from 'three-mtl-loader';
 })
 export class PlanetViewerComponent implements AfterViewInit {
   private camera: THREE.PerspectiveCamera;
+
+  constructor(private planetGenerationService: PlanetGenerationService) {
+    planetGenerationService.done.subscribe(e => {
+      this.createCube(e);
+    });
+  }
 
   private get canvas(): HTMLCanvasElement {
     return this.canvasRef.nativeElement;
@@ -36,8 +43,6 @@ export class PlanetViewerComponent implements AfterViewInit {
   @Input('farClipping')
   public farClippingPane: number = 1000;
 
-  constructor() { }
-
   private animateCube() {
     if (!this.cube)
       return;
@@ -45,18 +50,21 @@ export class PlanetViewerComponent implements AfterViewInit {
     this.cube.rotation.y += 0.01;
   }
 
-  private createCube() {
+  private createCube(some: any) {
+
+    console.log(some);
+
     OBJLoader(THREE);
 
     var localScene = this.scene;
     var mtlLoader = new MTLLoader();
 
-    let texture = new THREE.TextureLoader().load('/assets/image.png');
-    let material = new THREE.MeshBasicMaterial({ map: texture });
+    let texture = new THREE.TextureLoader().load('http://localhost:5000/api/planet/3d/' + some.image);
+    let material = new THREE.MeshBasicMaterial({map: texture});
     //material = new THREE.MeshBasicMaterial( { color: 0xff0000, wireframe: true } );
     var tThis = this;
     var objLoader = new THREE.OBJLoader();
-    objLoader.load('/assets/planet.obj', function (object) {
+    objLoader.load('http://localhost:5000/api/planet/3d/' + some.obj, function (object) {
       object.traverse(function (child) {
         if (child instanceof THREE.Mesh) {
           child.material = material;
@@ -85,7 +93,7 @@ export class PlanetViewerComponent implements AfterViewInit {
   }
 
   private startRenderingLoop() {
-    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas });
+    this.renderer = new THREE.WebGLRenderer({canvas: this.canvas});
     this.renderer.setPixelRatio(devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
 
@@ -106,8 +114,7 @@ export class PlanetViewerComponent implements AfterViewInit {
 
   public ngAfterViewInit() {
     this.createScene();
-    this.createCube();
+    //this.createCube();
     this.startRenderingLoop();
   }
-
 }

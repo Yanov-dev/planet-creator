@@ -21,7 +21,6 @@ namespace planet_creator.engine3D
             if (recursionLevelImage < _recursionLevel)
                 throw new Exception("recursion level of image must me equels or more the recuresion level");
 
-
             _recursionLevel = recursionLevel;
             _recursionLevelImage = recursionLevelImage;
         }
@@ -107,6 +106,9 @@ namespace planet_creator.engine3D
                         $"f {triengle.Points[0] + 1}/{index * 3 + 1} {triengle.Points[1] + 1}/{index * 3 + 2} {triengle.Points[2] + 1}/{index * 3 + 3}");
                 }
             }
+            
+            objStream?.Close();
+            imageStream?.Close();
         }
 
         private IEnumerable<int> GetCommonPoints(RefTriengle t1, RefTriengle t2)

@@ -13,6 +13,7 @@
 *.userprefs
 
 # Build results
+planet-creator.server/Files/
 wwwroot/
 [Dd]ebug/
 [Dd]ebugPublic/

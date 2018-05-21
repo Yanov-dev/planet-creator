@@ -8,8 +8,8 @@ using planet_creator.server.dto;
 
 namespace planet_creator.server.Controllers
 {
-    [Route("api/planet")]
-    public class PlanetController : Controller
+    [Route("api/planet/2d")]
+    public class Planet2dController : Controller
     {
         [HttpPost("generate")]
         public async Task<byte[]> Generate([FromBody] Generate2DRequest request)
