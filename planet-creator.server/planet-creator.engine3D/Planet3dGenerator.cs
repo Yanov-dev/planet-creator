@@ -14,15 +14,17 @@ namespace planet_creator.engine3D
     {
         private readonly int _recursionLevel;
         private readonly int _recursionLevelImage;
+        private readonly double _seed;
         private ColorBitmapScheme _colorBitmapScheme;
 
-        public Planet3dGenerator(int recursionLevel, int recursionLevelImage)
+        public Planet3dGenerator(int recursionLevel, int recursionLevelImage, double seed)
         {
             if (recursionLevelImage < _recursionLevel)
                 throw new Exception("recursion level of image must me equels or more the recuresion level");
 
             _recursionLevel = recursionLevel;
             _recursionLevelImage = recursionLevelImage;
+            _seed = seed;
         }
 
         private SphereModel GetSkeletone(int recursionLevel)
@@ -50,13 +52,13 @@ namespace planet_creator.engine3D
         {
             var widht = _colorBitmapScheme.Width;
             var height = _colorBitmapScheme.Height;
+
+            var algorithm = new DefaultGenerationAlgorithm(_seed);
+
             if (imageStream != null)
                 using (var image = new Image<Rgba32>(widht, height))
                 {
-                    var algorithm = new DefaultGenerationAlgorithm(0);
-
                     var range = algorithm.GetRange();
-
 
                     var colorRange = colorContainer.Range;
 
@@ -81,6 +83,9 @@ namespace planet_creator.engine3D
                 for (var i = 0; i < _colorBitmapScheme.SphereModel.Points.Count; i++)
                 {
                     var point = _colorBitmapScheme.SphereModel.Points[i];
+//
+//                    point *= 1 + algorithm.GetAlt(point, 50);
+
                     sw.WriteLine($"v {point.X} {point.Y} {point.Z}");
                 }
 
@@ -106,7 +111,7 @@ namespace planet_creator.engine3D
                         $"f {triengle.Points[0] + 1}/{index * 3 + 1} {triengle.Points[1] + 1}/{index * 3 + 2} {triengle.Points[2] + 1}/{index * 3 + 3}");
                 }
             }
-            
+
             objStream?.Close();
             imageStream?.Close();
         }

@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^6.0.2",
     "@angular/router": "^6.0.2",
     "core-js": "^2.5.4",
+    "ngx-color-picker": "^6.2.0",
     "rxjs": "^6.0.0",
     "three": "^0.92.0",
     "three-mtl-loader": "^1.0.2",

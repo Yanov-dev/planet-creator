@@ -32,7 +32,7 @@ export class PlanetViewerComponent implements AfterViewInit {
   private scene: THREE.Scene;
 
   @Input()
-  public cameraZ: number = 5;
+  public cameraZ: number = 2;
 
   @Input()
   public fieldOfView: number = 70;
@@ -70,10 +70,16 @@ export class PlanetViewerComponent implements AfterViewInit {
           child.material = material;
         }
       });
+      if (tThis.lastPlanet)
+        localScene.remove(tThis.lastPlanet);
       localScene.add(object);
+      tThis.lastPlanet = object;
+
       tThis.cube = object;
     });
   }
+
+  lastPlanet: any;
 
   private createScene() {
     this.scene = new THREE.Scene();

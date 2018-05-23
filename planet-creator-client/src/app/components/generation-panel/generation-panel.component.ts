@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {PlanetGenerationService} from '../../services/planet-generation.service';
+import {ShemaLayer} from '../../Models/ShemaLayer';
 
 @Component({
   selector: 'app-generation-panel',
@@ -7,13 +8,23 @@ import {PlanetGenerationService} from '../../services/planet-generation.service'
 })
 export class GenerationPanelComponent implements OnInit {
 
-  constructor(private planetGenerationService: PlanetGenerationService) {
+  @Output()
+  generate: EventEmitter<ShemaLayer> = new EventEmitter<ShemaLayer>();
+
+  @Output()
+  objDepthChange: EventEmitter<number> = new EventEmitter<number>();
+
+  @Output()
+  imageDepthChange: EventEmitter<number> = new EventEmitter<number>();
+
+  constructor() {
   }
 
   ngOnInit() {
   }
 
-  generate() {
-    this.planetGenerationService.generate();
+  test(any:any)
+  {
+    console.log(any);
   }
 }

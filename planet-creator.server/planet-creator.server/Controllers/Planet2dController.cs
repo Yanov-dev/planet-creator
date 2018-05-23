@@ -28,18 +28,6 @@ namespace planet_creator.server.Controllers
             });
         }
 
-        [HttpPost("layer_preview")]
-        public async Task<byte[]> LayerPreview([FromBody] ShemaLayer layer)
-        {
-            return await Task.Run(() =>
-            {
-                var cc = new ColorContainer(layer);
-
-                var ms = new MemoryStream();
-
-                cc.GeneratePreview(new Size(100, 500), ms);
-                return ms.ToArray();
-            });
-        }
+       
     }
 }

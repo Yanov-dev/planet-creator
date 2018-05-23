@@ -19,9 +19,9 @@ namespace planet_creator.server.Controllers
         }
 
         [HttpPost("generate")]
-        public async Task<Generation3dResults> Generate()
+        public async Task<Generation3dResults> Generate([FromBody] Generate3dRequest request)
         {
-            var gen = new Planet3dGenerator(2, 5);
+            var gen = new Planet3dGenerator(request.ObjDepth, request.ImageDepth, request.Seed);
 
             var objId = Guid.NewGuid();
             var imageId = Guid.NewGuid();
@@ -31,7 +31,8 @@ namespace planet_creator.server.Controllers
             if (!Directory.Exists("Files"))
                 Directory.CreateDirectory("Files");
 
-            var colorContainer = new ColorContainer(GetShema().Layers[0]);
+            //var colorContainer = new ColorContainer(GetShema().Layers[0]);
+            var colorContainer = new ColorContainer(request.Layer);
             var objName = $"{objId}.obj";
             var imageName = $"{imageId}.png";
             gen.Export(
@@ -45,6 +46,31 @@ namespace planet_creator.server.Controllers
                 Obj = objName,
                 Image = imageName
             };
+        }
+
+        private ShemaLayer GetRandom()
+        {
+            var rand = new Random();
+
+            var levels = rand.Next(4, 7);
+
+            var shemaLayer = new ShemaLayer();
+
+            var offset = 0;
+            for (int i = 0; i < levels; i++)
+            {
+                var height = rand.Next(50, 400);
+
+                shemaLayer.Colors.Add(new ColorLevel
+                {
+                    Level = offset + height,
+                    Color = Color.FromArgb(rand.Next(255), rand.Next(255), rand.Next(255))
+                });
+
+                offset += height;
+            }
+
+            return shemaLayer;
         }
 
         private Shema GetShema()
