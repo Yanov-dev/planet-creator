@@ -46,16 +46,26 @@ export class LayerEditorComponent implements OnInit {
     });
   }
 
+  addColor() {
+    this.layer.colors.push(new ColorLevel(0, '#ffffff'));
+    this.updateView();
+  }
+
   colorChange() {
+    this.updatePreview();
+    this.change.emit(this._layer);
+  }
+
+  updateView() {
+    this.layer.colors = this.layer.colors.sort(a => a.level);
+    this.dataSource.data = this.layer.colors;
     this.updatePreview();
     this.change.emit(this._layer);
   }
 
   removeColor(level: number) {
     this.layer.colors = this.layer.colors.filter(e => e.level !== level);
-    this.dataSource.data = this.layer.colors;
-    this.updatePreview();
-    this.change.emit(this._layer);
+    this.updateView();
   }
 
   updatePreview() {

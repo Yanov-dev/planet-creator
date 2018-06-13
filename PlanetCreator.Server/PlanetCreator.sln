@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetCreator.Engine", "PlanetCreator.Engine\PlanetCreator.Engine.csproj", "{3E770B2B-D720-4517-AC4A-CA777BD50946}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetCreator.Engine.Extensions", "PlanetCreator.Engine.Extensions\PlanetCreator.Engine.Extensions.csproj", "{73A803B5-F559-45CB-98AE-3CD02932A8D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetCreator.Engine3D", "PlanetCreator.Engine3D\PlanetCreator.Engine3D.csproj", "{81CF77CE-E28E-4C73-84BA-209C2107FA0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetCreator.Server", "PlanetCreator.Server\PlanetCreator.Server.csproj", "{92DFA190-BCB8-458F-8D08-B31DB6BE79FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanetCreator.Server.Dto", "PlanetCreator.Server.Dto\PlanetCreator.Server.Dto.csproj", "{44693459-4160-4B8C-A50B-C5A71D8DED68}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E770B2B-D720-4517-AC4A-CA777BD50946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E770B2B-D720-4517-AC4A-CA777BD50946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E770B2B-D720-4517-AC4A-CA777BD50946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E770B2B-D720-4517-AC4A-CA777BD50946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73A803B5-F559-45CB-98AE-3CD02932A8D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73A803B5-F559-45CB-98AE-3CD02932A8D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73A803B5-F559-45CB-98AE-3CD02932A8D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73A803B5-F559-45CB-98AE-3CD02932A8D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81CF77CE-E28E-4C73-84BA-209C2107FA0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81CF77CE-E28E-4C73-84BA-209C2107FA0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81CF77CE-E28E-4C73-84BA-209C2107FA0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81CF77CE-E28E-4C73-84BA-209C2107FA0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92DFA190-BCB8-458F-8D08-B31DB6BE79FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92DFA190-BCB8-458F-8D08-B31DB6BE79FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92DFA190-BCB8-458F-8D08-B31DB6BE79FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92DFA190-BCB8-458F-8D08-B31DB6BE79FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44693459-4160-4B8C-A50B-C5A71D8DED68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44693459-4160-4B8C-A50B-C5A71D8DED68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44693459-4160-4B8C-A50B-C5A71D8DED68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44693459-4160-4B8C-A50B-C5A71D8DED68}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

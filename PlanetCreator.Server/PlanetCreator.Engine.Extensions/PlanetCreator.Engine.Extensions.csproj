@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PlanetCreator.Engine3D\PlanetCreator.Engine3D.csproj" />
+    <ProjectReference Include="..\PlanetCreator.Engine\PlanetCreator.Engine.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SixLabors.ImageSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\..\..\Users\ynovikov\.nuget\packages\sixlabors.imagesharp\1.0.0-beta0004\lib\netstandard2.0\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="SixLabors.Core">
+      <Version>1.0.0-beta0005</Version>
+    </PackageReference>
+  </ItemGroup>
+</Project>
